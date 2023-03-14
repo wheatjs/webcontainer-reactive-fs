@@ -1,0 +1,79 @@
+{
+  "name": "webcontainer-reactive-fs",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@7.12.0",
+  "description": "Reactive fs for WebContainers",
+  "author": "Jacob Clevenger <jacobrclevenger@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/wheatjs/webcontainer-reactive-fs#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wheatjs/webcontainer-reactive-fs.git"
+  },
+  "bugs": "https://github.com/wheatjs/webcontainer-reactive-fs/issues",
+  "keywords": [],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*",
+        "./dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "lint": "eslint .",
+    "play": "npm -C playground run dev",
+    "prepublishOnly": "nr build",
+    "release": "bumpp && npm publish",
+    "start": "esno src/index.ts",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@webcontainer/api": "^1.0.2"
+  },
+  "dependencies": {
+    "@vue/reactivity": ">=3.0.0",
+    "@vueuse/core": ">=7.0.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.35.3",
+    "@antfu/ni": "^0.20.0",
+    "@antfu/utils": "^0.7.2",
+    "@types/node": "^18.14.1",
+    "bumpp": "^9.0.0",
+    "eslint": "^8.34.0",
+    "esno": "^0.16.3",
+    "lint-staged": "^13.1.2",
+    "pnpm": "^7.27.1",
+    "rimraf": "^4.1.2",
+    "simple-git-hooks": "^2.8.1",
+    "typescript": "^4.9.5",
+    "unbuild": "^1.1.2",
+    "vite": "^4.1.4",
+    "vitest": "^0.28.5"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}
