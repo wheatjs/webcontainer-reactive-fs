@@ -1,7 +1,7 @@
 {
   "name": "webcontainer-reactive-fs",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "packageManager": "pnpm@7.12.0",
   "description": "Reactive fs for WebContainers",
   "author": "Jacob Clevenger <jacobrclevenger@gmail.com>",
